@@ -1,7 +1,14 @@
+import localFont from "next/font/local";
+
 import { PrismicPreview } from "@prismicio/next";
 import { repositoryName } from "@/prismicio";
 
 import "./app.css";
+
+const alpino = localFont({
+  src: "../../public/fonts/Alpino-Varriable.woff2",
+  display: "swap",
+});
 
 export default function RootLayout({
   children,
