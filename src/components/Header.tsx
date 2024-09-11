@@ -1,7 +1,8 @@
 import React from "react";
+import { FizziLogo } from "./FizziLogo";
 
 const Header = () => {
-  return <header>Header</header>;
+  return <header className="-mb-28 flex justify-center py-4"></header>;
 };
 
 export default Header;
