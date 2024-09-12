@@ -1,6 +1,6 @@
 import React from "react";
 import { PrismicNextLink } from "@prismicio/next";
-import { LinkField } from "@prismicio/client";
+import { LinkField, asText } from "@prismicio/client";
 
 type Props = {
   buttonLink: LinkField;
@@ -8,6 +8,6 @@ type Props = {
   className?: string;
 };
 
-const Button = (props: Props) => {
-  return <PrismicNextLink field={slice.primary.button_link}></PrismicNextLink>;
-};
+export default function Button({ buttonLink, buttonText, className }: Props) {
+  return <PrismicNextLink field={buttonLink}></PrismicNextLink>;
+}
