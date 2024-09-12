@@ -41,13 +41,6 @@
 				"value": "needed",
 				"type": "Text"
 			},
-			"button_link": {
-				"__TYPE__": "LinkContent",
-				"value": {
-					"__TYPE__": "ExternalLink",
-					"url": "http://twitter.com"
-				}
-			},
 			"cans_image": {
 				"origin": {
 					"id": "main",
@@ -92,6 +85,11 @@
 						}
 					}
 				]
+			},
+			"button_link": {
+				"__TYPE__": "FieldContent",
+				"value": "shinning",
+				"type": "Text"
 			}
 		},
 		"items": []

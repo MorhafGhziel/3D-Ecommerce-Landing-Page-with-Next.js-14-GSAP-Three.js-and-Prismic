@@ -1,8 +1,12 @@
+"use client";
+
 import { Content, asText } from "@prismicio/client";
 import { SliceComponentProps } from "@prismicio/react";
 import { PrismicRichText } from "@prismicio/react";
 import { PrismicNextLink } from "@prismicio/next";
 import { PrismicNextImage } from "@prismicio/next";
+import { TextSplitter } from "@/components/TextSplitter"; // Adjust this if TextSplitter is a named export
+import Button from "@/components/Button";
 
 import { Bounded } from "@/components/Bounded";
 
@@ -24,7 +28,11 @@ const Hero = ({ slice }: HeroProps): JSX.Element => {
         <div className="grid h-screen place-items-center">
           <div className="grid auto-rows-min place-items-center text-center">
             <h1 className="hero-header text-7xl font-black uppercase leading-[.8] text-orange-500 md:text-[9rem] lg:text-[13rem]">
-              {asText(slice.primary.heading)}
+              <TextSplitter
+                text={asText(slice.primary.heading)}
+                wordDisplayStyle="block"
+                className="hero-header-word"
+              />
             </h1>
             <div className="hero-subheading mt-12 text-5xl font-semibold text-sky-950 lg:text-6xl">
               <PrismicRichText field={slice.primary.subheading} />
@@ -32,22 +40,27 @@ const Hero = ({ slice }: HeroProps): JSX.Element => {
             <div className="hero-body text-2xl font-normal text-sky-950">
               <PrismicRichText field={slice.primary.body} />
             </div>
-            {slice.primary.button_text}
-            <PrismicNextLink
-              field={slice.primary.button_link}
-            ></PrismicNextLink>
-            <button className="mt-10 rounded-xl bg-orange-600 px-5 py-4 text-center text-xl font-bold uppercase tracking-wide text-white transition-colors duration-150 hover:bg-orange-700 md:text-2xl">
-              Shop Now
-            </button>
+            <Button
+              buttonLink={slice.primary.button_link}
+              buttonText={slice.primary.button_text}
+              className="hero-button mt-12"
+            />
           </div>
         </div>
+
         <div className="text-side relative z-[80] grid h-screen items-center gap-4 md:grid-cols-2">
           <PrismicNextImage
             className="w-full md:hidden"
             field={slice.primary.cans_image}
           />
-          <PrismicRichText field={slice.primary.second_heading} />
-          <PrismicRichText field={slice.primary.second_body} />
+          <div>
+            <h2 className="text-side-heading text-balance text-6xl font-black uppercase text-sky-950 lg:text-8xl">
+              <TextSplitter text={asText(slice.primary.second_heading)} />
+            </h2>
+            <div className="text-side-body mt-4 max-w-xl text-balance text-xl font-normal text-sky-950">
+              <PrismicRichText field={slice.primary.second_body} />
+            </div>
+          </div>
         </div>
       </div>
     </Bounded>

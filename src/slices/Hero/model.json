@@ -39,22 +39,6 @@
             "single": "preformatted,heading1,heading2,heading3,heading4,heading5,heading6,strong,em,hyperlink,image,embed,list-item,o-list-item,rtl"
           }
         },
-        "button_text": {
-          "type": "Text",
-          "config": {
-            "label": "Button Text",
-            "placeholder": ""
-          }
-        },
-        "button_link": {
-          "type": "Link",
-          "config": {
-            "label": "Button Link",
-            "placeholder": "",
-            "allowTargetBlank": false,
-            "select": null
-          }
-        },
         "cans_image": {
           "type": "Image",
           "config": {
@@ -79,6 +63,20 @@
             "placeholder": "",
             "allowTargetBlank": true,
             "multi": "preformatted,heading1,heading2,heading3,heading4,heading5,heading6,hyperlink,image,embed,list-item,o-list-item,rtl"
+          }
+        },
+        "button_text": {
+          "type": "Text",
+          "config": {
+            "label": "Button Text",
+            "placeholder": ""
+          }
+        },
+        "button_link": {
+          "type": "Text",
+          "config": {
+            "label": "Button Link",
+            "placeholder": ""
           }
         }
       },
