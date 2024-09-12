@@ -5,6 +5,7 @@ import { PrismicNextLink } from "@prismicio/next";
 import { PrismicNextImage } from "@prismicio/next";
 
 import { Bounded } from "@/components/Bounded";
+import Button from "@/components/Button";
 
 /**
  * Props for `Hero`.
@@ -43,6 +44,7 @@ const Hero = ({ slice }: HeroProps): JSX.Element => {
           <PrismicRichText field={slice.primary.second_heading} />
           <PrismicRichText field={slice.primary.second_body} />
         </div>
+        <Button />
       </div>
     </Bounded>
   );
