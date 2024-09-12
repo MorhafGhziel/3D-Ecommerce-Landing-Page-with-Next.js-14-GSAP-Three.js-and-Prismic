@@ -26,7 +26,7 @@ const Hero = ({ slice }: HeroProps): JSX.Element => {
             <h1 className="hero-header text-7xl font-black uppercase leading-[.8] text-orange-500 md:text-[9rem] lg:text-[13rem]">
               {asText(slice.primary.heading)}
             </h1>
-            <div className="hero-subheading">
+            <div className="hero-subheading mt-12 text-5xl font-semibold text-sky-950 lg:text-6xl">
               <PrismicRichText field={slice.primary.subheading} />
             </div>
             <PrismicRichText field={slice.primary.body} />
