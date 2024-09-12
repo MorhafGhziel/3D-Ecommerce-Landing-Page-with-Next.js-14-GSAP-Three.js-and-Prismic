@@ -79,34 +79,46 @@ export type PageDocument<Lang extends string = string> =
 export type AllDocumentTypes = PageDocument;
 
 /**
- * Default variation for Default Slice
+ * Primary content in *Hero → Default → Primary*
+ */
+export interface HeroSliceDefaultPrimary {
+  /**
+   * Heading field in *Hero → Default → Primary*
+   *
+   * - **Field Type**: Rich Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: hero.default.primary.heading
+   * - **Documentation**: https://prismic.io/docs/field#rich-text-title
+   */
+  heading: prismic.RichTextField;
+}
+
+/**
+ * Default variation for Hero Slice
  *
  * - **API ID**: `default`
  * - **Description**: Default
  * - **Documentation**: https://prismic.io/docs/slice
  */
-export type DefaultSliceDefault = prismic.SharedSliceVariation<
+export type HeroSliceDefault = prismic.SharedSliceVariation<
   "default",
-  Record<string, never>,
+  Simplify<HeroSliceDefaultPrimary>,
   never
 >;
 
 /**
- * Slice variation for *Default*
+ * Slice variation for *Hero*
  */
-type DefaultSliceVariation = DefaultSliceDefault;
+type HeroSliceVariation = HeroSliceDefault;
 
 /**
- * Default Shared Slice
+ * Hero Shared Slice
  *
- * - **API ID**: `default`
- * - **Description**: Default
+ * - **API ID**: `hero`
+ * - **Description**: Hero
  * - **Documentation**: https://prismic.io/docs/slice
  */
-export type DefaultSlice = prismic.SharedSlice<
-  "default",
-  DefaultSliceVariation
->;
+export type HeroSlice = prismic.SharedSlice<"hero", HeroSliceVariation>;
 
 declare module "@prismicio/client" {
   interface CreateClient {
@@ -122,9 +134,10 @@ declare module "@prismicio/client" {
       PageDocumentData,
       PageDocumentDataSlicesSlice,
       AllDocumentTypes,
-      DefaultSlice,
-      DefaultSliceVariation,
-      DefaultSliceDefault,
+      HeroSlice,
+      HeroSliceDefaultPrimary,
+      HeroSliceVariation,
+      HeroSliceDefault,
     };
   }
 }
