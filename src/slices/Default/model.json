@@ -1,0 +1,16 @@
+{
+  "id": "default",
+  "type": "SharedSlice",
+  "name": "Default",
+  "description": "Default",
+  "variations": [
+    {
+      "id": "default",
+      "name": "Default",
+      "docURL": "...",
+      "version": "initial",
+      "description": "Default",
+      "imageUrl": ""
+    }
+  ]
+}

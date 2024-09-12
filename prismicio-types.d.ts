@@ -79,15 +79,45 @@ export type PageDocument<Lang extends string = string> =
 export type AllDocumentTypes = PageDocument;
 
 /**
- * Primary content in *RichText → Primary*
+ * Default variation for Default Slice
+ *
+ * - **API ID**: `default`
+ * - **Description**: Default
+ * - **Documentation**: https://prismic.io/docs/slice
+ */
+export type DefaultSliceDefault = prismic.SharedSliceVariation<
+  "default",
+  Record<string, never>,
+  never
+>;
+
+/**
+ * Slice variation for *Default*
+ */
+type DefaultSliceVariation = DefaultSliceDefault;
+
+/**
+ * Default Shared Slice
+ *
+ * - **API ID**: `default`
+ * - **Description**: Default
+ * - **Documentation**: https://prismic.io/docs/slice
+ */
+export type DefaultSlice = prismic.SharedSlice<
+  "default",
+  DefaultSliceVariation
+>;
+
+/**
+ * Primary content in *RichText → Default → Primary*
  */
 export interface RichTextSliceDefaultPrimary {
   /**
-   * Content field in *RichText → Primary*
+   * Content field in *RichText → Default → Primary*
    *
    * - **Field Type**: Rich Text
    * - **Placeholder**: Lorem ipsum...
-   * - **API ID Path**: rich_text.primary.content
+   * - **API ID Path**: rich_text.default.primary.content
    * - **Documentation**: https://prismic.io/docs/field#rich-text-title
    */
   content: prismic.RichTextField;
@@ -137,6 +167,9 @@ declare module "@prismicio/client" {
       PageDocumentData,
       PageDocumentDataSlicesSlice,
       AllDocumentTypes,
+      DefaultSlice,
+      DefaultSliceVariation,
+      DefaultSliceDefault,
       RichTextSlice,
       RichTextSliceDefaultPrimary,
       RichTextSliceVariation,
