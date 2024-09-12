@@ -5,7 +5,7 @@ import { SliceComponentProps } from "@prismicio/react";
 import { PrismicRichText } from "@prismicio/react";
 import { PrismicNextLink } from "@prismicio/next";
 import { PrismicNextImage } from "@prismicio/next";
-import { TextSplitter } from "@/components/TextSplitter"; // Adjust this if TextSplitter is a named export
+import { TextSplitter } from "@/components/TextSplitter";
 import Button from "@/components/Button";
 
 import { Bounded } from "@/components/Bounded";
