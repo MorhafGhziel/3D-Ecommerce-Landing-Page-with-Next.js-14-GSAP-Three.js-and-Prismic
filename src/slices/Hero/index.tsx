@@ -21,14 +21,14 @@ const Hero = ({ slice }: HeroProps): JSX.Element => {
       data-slice-variation={slice.variation}
     >
       <div className="grid">
-        <div className="grid">
+        <div className="grid h-screen place-items-center">
           <PrismicRichText field={slice.primary.heading} />
           <PrismicRichText field={slice.primary.subheading} />
           <PrismicRichText field={slice.primary.body} />
           {slice.primary.button_text}
           <PrismicNextLink field={slice.primary.button_link}></PrismicNextLink>
         </div>
-        <div className="grid">
+        <div className="text-side relative z-[80] grid h-screen items-center gap-4 md:grid-cols-2">
           <PrismicNextImage field={slice.primary.cans_image} />
           <PrismicRichText field={slice.primary.second_heading} />
           <PrismicRichText field={slice.primary.second_body} />
