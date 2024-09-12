@@ -1,4 +1,4 @@
-import { Content } from "@prismicio/client";
+import { Content, asText } from "@prismicio/client";
 import { SliceComponentProps } from "@prismicio/react";
 import { PrismicRichText } from "@prismicio/react";
 import { PrismicNextLink } from "@prismicio/next";
@@ -22,11 +22,17 @@ const Hero = ({ slice }: HeroProps): JSX.Element => {
     >
       <div className="grid">
         <div className="grid h-screen place-items-center">
-          <PrismicRichText field={slice.primary.heading} />
-          <PrismicRichText field={slice.primary.subheading} />
-          <PrismicRichText field={slice.primary.body} />
-          {slice.primary.button_text}
-          <PrismicNextLink field={slice.primary.button_link}></PrismicNextLink>
+          <div className="grid auto-rows-min place-items-center text-center">
+            <h1 className="hero-header text-7xl font-black uppercase leading-[.8] text-orange-500 md:text-[9rem] lg:text-[13rem]">
+              {asText(slice.primary.heading)}
+            </h1>
+            <PrismicRichText field={slice.primary.subheading} />
+            <PrismicRichText field={slice.primary.body} />
+            {slice.primary.button_text}
+            <PrismicNextLink
+              field={slice.primary.button_link}
+            ></PrismicNextLink>
+          </div>
         </div>
         <div className="text-side relative z-[80] grid h-screen items-center gap-4 md:grid-cols-2">
           <PrismicNextImage field={slice.primary.cans_image} />
