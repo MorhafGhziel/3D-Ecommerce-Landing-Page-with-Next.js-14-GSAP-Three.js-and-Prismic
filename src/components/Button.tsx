@@ -9,5 +9,5 @@ type Props = {
 };
 
 export default function Button({ buttonLink, buttonText, className }: Props) {
-  return <PrismicNextLink field={buttonLink}></PrismicNextLink>;
+  return <PrismicNextLink field={buttonLink}>{buttonText}</PrismicNextLink>;
 }
