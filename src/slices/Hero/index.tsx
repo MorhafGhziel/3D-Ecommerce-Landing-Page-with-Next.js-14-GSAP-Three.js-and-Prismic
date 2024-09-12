@@ -42,7 +42,10 @@ const Hero = ({ slice }: HeroProps): JSX.Element => {
           </div>
         </div>
         <div className="text-side relative z-[80] grid h-screen items-center gap-4 md:grid-cols-2">
-          <PrismicNextImage field={slice.primary.cans_image} />
+          <PrismicNextImage
+            className="w-full md:hidden"
+            field={slice.primary.cans_image}
+          />
           <PrismicRichText field={slice.primary.second_heading} />
           <PrismicRichText field={slice.primary.second_body} />
         </div>
