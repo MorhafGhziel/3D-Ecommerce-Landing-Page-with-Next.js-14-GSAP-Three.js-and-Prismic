@@ -1,5 +1,8 @@
 import { Content } from "@prismicio/client";
 import { SliceComponentProps } from "@prismicio/react";
+import { PrismicRichText } from "@prismicio/react";
+import { PrismicNextLink } from "@prismicio/next";
+import { PrismicNextImage } from "@prismicio/next";
 
 /**
  * Props for `Hero`.
@@ -15,7 +18,14 @@ const Hero = ({ slice }: HeroProps): JSX.Element => {
       data-slice-type={slice.slice_type}
       data-slice-variation={slice.variation}
     >
-      Placeholder component for hero (variation: {slice.variation}) Slices
+      <PrismicRichText field={slice.primary.heading} />
+      <PrismicRichText field={slice.primary.subheading} />
+      <PrismicRichText field={slice.primary.body} />
+      {slice.primary.button_text}
+      <PrismicNextLink field={slice.primary.button_link}>Link</PrismicNextLink>
+      <PrismicNextImage field={slice.primary.cans_image} />
+      <PrismicRichText field={slice.primary.second_heading} />
+      <PrismicRichText field={slice.primary.second_body} />
     </section>
   );
 };
