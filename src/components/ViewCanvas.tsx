@@ -18,7 +18,7 @@ export default function ViewCanvas({}: Props) {
         zIndex: "30",
       }}
     >
-      <mesh rotation={[0.5, 0.5, 0]}>
+      <mesh rotation={[0.5, 0.5, 0]} position={[1, 0, 0]}>
         <boxGeometry />
         <meshStandardMaterial color={"hotpink"} />
       </mesh>
