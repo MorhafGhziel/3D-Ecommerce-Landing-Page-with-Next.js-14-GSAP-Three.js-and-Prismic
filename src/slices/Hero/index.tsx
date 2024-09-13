@@ -37,7 +37,7 @@ const Hero = ({ slice }: HeroProps): JSX.Element => {
     <Bounded
       data-slice-type={slice.slice_type}
       data-slice-variation={slice.variation}
-      className="hero"
+      className="hero -mt-[200px] md:-mt-[370px] lg:-mt-[200px]"
     >
       <div className="grid">
         <div className="grid h-screen place-items-center">
