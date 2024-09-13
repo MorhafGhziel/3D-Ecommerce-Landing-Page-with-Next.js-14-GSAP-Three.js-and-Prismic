@@ -17,6 +17,9 @@ export default function ViewCanvas({}: Props) {
         pointerEvents: "none",
         zIndex: "30",
       }}
+      camera={{
+        fov: 30,
+      }}
     >
       <mesh rotation={[0.5, 0.5, 0]} position={[1, 0, 0]}>
         <boxGeometry />
