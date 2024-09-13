@@ -23,6 +23,7 @@ export default function ViewCanvas({}: Props) {
         <meshStandardMaterial color={"hotpink"} />
       </mesh>
       <ambientLight intensity={2} />
+      <spotLight intensity={3} position={(1, 1, 1)} />
     </Canvas>
   );
 }
