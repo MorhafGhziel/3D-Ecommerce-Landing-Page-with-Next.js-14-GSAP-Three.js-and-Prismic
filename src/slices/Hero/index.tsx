@@ -7,8 +7,13 @@ import { PrismicNextLink } from "@prismicio/next";
 import { PrismicNextImage } from "@prismicio/next";
 import { TextSplitter } from "@/components/TextSplitter";
 import Button from "@/components/Button";
+import gsap from "gsap";
+import { useGSAP } from "@gsap/react";
 
 import { Bounded } from "@/components/Bounded";
+import { headers } from "next/headers";
+
+gsap.registerPlugin(useGSAP);
 
 /**
  * Props for `Hero`.
@@ -19,6 +24,15 @@ export type HeroProps = SliceComponentProps<Content.HeroSlice>;
  * Component for "Hero" Slices.
  */
 const Hero = ({ slice }: HeroProps): JSX.Element => {
+  useGSAP(() => {
+    const introTi = gsap.timeline();
+
+    introTi.from(".hero-header-word", {
+      scale: 3,
+      opacity: 0,
+    });
+  });
+
   return (
     <Bounded
       data-slice-type={slice.slice_type}
